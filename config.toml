@@ -1,5 +1,5 @@
 baseURL = ""
-languageCode = "en-us"
+languageCode = "en-gb"
 googleAnalytics = ""
 relativeURLs = false
 disablePathToLower = true
@@ -7,6 +7,7 @@ ignoreFiles = [
     "/content/private/*",
     "/content/dnd/_ObsidianMetaNotes.md",
     "/content/dnd/_templates/*",
+    "/content/dnd/player-characters/Pierce/Pierce.SpellSlots.md"
 ]
 summaryLength = 20
 paginate = 10
