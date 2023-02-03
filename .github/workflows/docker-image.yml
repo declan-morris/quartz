@@ -1,0 +1,22 @@
+name: Docker
+
+on:
+  push:
+    branches: [ "hugo" ]
+
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Pull latest changes on VPS
+      uses: appleboy/ssh-action@master
+      with:
+          host: declanmorris.com
+          USERNAME: dtm
+          PORT: 22
+          KEY: ${{ secrets.VPS_SSHKEY }}
+          script: cd /opt/docker/dnd && git pull
