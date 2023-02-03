@@ -12,6 +12,16 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
+    - name: SCP Files
+      uses: appleboy/scp-action@v0.0.1
+      with:
+        host: declanmorris.com
+        username: dtm
+        KEY: ${{ secrets.VPS_SSHKEY }}
+        port: 22
+        source: "*"
+        target: /opt/docker/dnd
+
     - name: Pull latest changes on VPS
       uses: appleboy/ssh-action@master
       with:
