@@ -11,8 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Checkout submodules
-      uses: textbook/git-checkout-submodule-action@master
+      with:
+        submodules: recursive
     
     - name: SCP Files
       uses: appleboy/scp-action@v0.1.3
