@@ -1,8 +1,8 @@
 version: '3.3'
 services:
     dandd:
+        container_name: "dandd-quartz"
+        restart: always
         build: .
-            # volumes:
-            #     - './:/quartz'
         ports:
             - '1313:1313'
