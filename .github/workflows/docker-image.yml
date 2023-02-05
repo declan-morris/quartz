@@ -25,11 +25,20 @@ jobs:
         source: "*"
         target: /opt/docker/dnd
 
-    - name: Pull latest changes on VPS
+    - name: Deploy latest changes on VPS
       uses: appleboy/ssh-action@master
       with:
           host: declanmorris.com
           USERNAME: dtm
           PORT: 22
           KEY: ${{ secrets.VPS_SSHKEY }}
-          script: cd /opt/docker/dnd && git pull
+          script: cd /opt/docker/dnd && docker-compose up --build -d
+
+#    - name: Pull latest changes on VPS
+ #     uses: appleboy/ssh-action@master
+  #    with:
+   #       host: declanmorris.com
+    #      USERNAME: dtm
+     #     PORT: 22
+      #    KEY: ${{ secrets.VPS_SSHKEY }}
+       #   script: cd /opt/docker/dnd && git pull
